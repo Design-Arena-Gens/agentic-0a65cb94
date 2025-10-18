@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 255 255 255;
+  --foreground: 17 24 39;
+}
+
+.dark {
+  --background: 3 7 18;
+  --foreground: 229 231 235;
+}
+
+html, body, #__next {
+  height: 100%;
+}
+
+body {
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+}
+
+/* Micro-interaction helpers */
+.interactive-shadow {
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+.interactive-shadow:hover {
+  box-shadow: 0 10px 25px -10px rgba(99, 102, 241, 0.45);
+}
+.interactive-shadow:active {
+  transform: translateY(1px) scale(0.995);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+}
+.dark .glass {
+  background: rgba(17, 24, 39, 0.55);
+}
